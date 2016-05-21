@@ -33,7 +33,6 @@ void loop() {
 }
   else {
     digitalWrite(led, LOW);
-    Serial.println("Out of range");
   }
 
 }
