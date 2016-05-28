@@ -26,11 +26,16 @@ void loop() {
   distance = (duration/2) / 29.1;
  
 
+<<<<<<< Updated upstream
   if (distance <= 30) {
     digitalWrite(led,HIGH);
     analogWrite(buzzer, 10);
     delay(500);
     analogWrite(buzzer, 0);
+=======
+  if (distance <= 15) {
+    digitalWrite(led, HIGH);
+>>>>>>> Stashed changes
 }
   else {
     digitalWrite(led,LOW);
