@@ -1,12 +1,9 @@
 #define trigPin 7
 #define echoPin 6
 #define led 13
-#define led2 12
-#define led3 11
-#define led4 10
-#define led5 9
-#define led6 8
 #define buzzer 3
+
+int sound = 250;
 
 
 void setup() {
@@ -14,6 +11,7 @@ void setup() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   pinMode(led, OUTPUT);
+  pinMode(buzzer, OUTPUT);
  
 }
 
@@ -29,11 +27,13 @@ void loop() {
  
 
   if (distance <= 30) {
-    digitalWrite(led, HIGH);
+    digitalWrite(led,HIGH);
+    analogWrite(buzzer, 10);
+    delay(500);
+    analogWrite(buzzer, 0);
 }
   else {
-    digitalWrite(led, LOW);
+    digitalWrite(led,LOW);
   }
-
+  delay(500);
 }
-
