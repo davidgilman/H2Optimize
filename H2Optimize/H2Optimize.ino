@@ -3,16 +3,14 @@
 #define led 13
 #define buzzer 3
 
-int sound = 250;
-
+int counter = 9;
 
 void setup() {
-  Serial.begin (9600);
+  Serial.begin(9600);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   pinMode(led, OUTPUT);
   pinMode(buzzer, OUTPUT);
- 
 }
 
 void loop() {
@@ -26,19 +24,20 @@ void loop() {
   distance = (duration/2) / 29.1;
  
 
-<<<<<<< Updated upstream
   if (distance <= 30) {
     digitalWrite(led,HIGH);
     analogWrite(buzzer, 10);
-    delay(500);
+    counter = counter - 1; 
+    String(Serial.print(counter));                     
+    delay(400);
     analogWrite(buzzer, 0);
-=======
-  if (distance <= 15) {
-    digitalWrite(led, HIGH);
->>>>>>> Stashed changes
 }
   else {
     digitalWrite(led,LOW);
+    String(Serial.print(counter));
+  }
+  if (counter == 0) {
+    counter = 8;
   }
   delay(500);
 }
