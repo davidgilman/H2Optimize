@@ -26,7 +26,7 @@ void loop() {
   delay(500);
  
 
-  if (distance < 6) {
+  if (distance < 7) {
     digitalWrite(led,HIGH);
     analogWrite(buzzer, 10);
     String(Serial.print(counter));     
@@ -38,7 +38,7 @@ void loop() {
     String(Serial.print(counter));
     value = 0;
   }
-  if (distance < 6 && value == 0) {
+  if (distance < 7 && value == 0) {
     counter = counter - 1;
     String(Serial.print(counter)); 
     value = 1; 
