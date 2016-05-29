@@ -36,8 +36,8 @@ void loop() {
     digitalWrite(led,LOW);
     String(Serial.print(counter));
   }
-  delay(500);
   if (counter == 0) {
     counter = 8;
   }
+  delay(500);
 }
