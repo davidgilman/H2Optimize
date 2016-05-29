@@ -3,7 +3,7 @@
 #define led 13
 #define buzzer 3
 
-int counter = 9;
+int counter = 8;
 
 void setup() {
   Serial.begin(9600);
@@ -24,7 +24,7 @@ void loop() {
   distance = (duration/2) / 29.1;
  
 
-  if (distance <= 30) {
+  if (distance == 30) {
     digitalWrite(led,HIGH);
     analogWrite(buzzer, 10);
     counter = counter - 1;
@@ -39,5 +39,5 @@ void loop() {
   if (counter == 0) {
     counter = 8;
   }
-  delay(500);
+
 }
