@@ -4,6 +4,7 @@
 #define buzzer 3
 
 int counter = 8;
+int value = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -22,19 +23,24 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
   distance = (duration/2) / 29.1;
+  delay(500);
  
 
-  if (distance == 30) {
+  if (distance < 6) {
     digitalWrite(led,HIGH);
-    analogWrite(buzzer, 10);
-    counter = counter - 1;
-    String(Serial.print(counter));                     
+    analogWrite(buzzer, 10);     
     delay(400);
     analogWrite(buzzer, 0);
 }
   else {
     digitalWrite(led,LOW);
     String(Serial.print(counter));
+    value = 0;
+  }
+  if (distance < 6 && value == 0) {
+    counter = counter - 1;
+    String(Serial.print(counter)); 
+    value = 1; 
   }
   if (counter == 0) {
     counter = 8;
