@@ -27,7 +27,7 @@ void loop() {
   if (distance <= 30) {
     digitalWrite(led,HIGH);
     analogWrite(buzzer, 10);
-    counter = counter - 1; 
+    counter = counter - 1;
     String(Serial.print(counter));                     
     delay(400);
     analogWrite(buzzer, 0);
@@ -36,8 +36,8 @@ void loop() {
     digitalWrite(led,LOW);
     String(Serial.print(counter));
   }
+  delay(500);
   if (counter == 0) {
     counter = 8;
   }
-  delay(500);
 }
